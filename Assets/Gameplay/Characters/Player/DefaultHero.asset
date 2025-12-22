@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c72ff922f8948984eb433270da3418c8, type: 3}
+  m_Name: DefaultHero
+  m_EditorClassIdentifier: Assembly-CSharp::HeroData
+  <Name>k__BackingField: "Default H\xE9ros"
+  <Image>k__BackingField: {fileID: 21300000, guid: 178b5bc9063b15c43a22f94a7c85fc1a, type: 3}
+  <Health>k__BackingField: 50
+  <Deck>k__BackingField:
+  - {fileID: 11400000, guid: a154a903f12daf34383260a7d912f6c9, type: 2}
+  - {fileID: 11400000, guid: a154a903f12daf34383260a7d912f6c9, type: 2}
+  - {fileID: 11400000, guid: a154a903f12daf34383260a7d912f6c9, type: 2}
+  - {fileID: 11400000, guid: a154a903f12daf34383260a7d912f6c9, type: 2}
+  - {fileID: 11400000, guid: a154a903f12daf34383260a7d912f6c9, type: 2}
+  - {fileID: 11400000, guid: a154a903f12daf34383260a7d912f6c9, type: 2}
+  - {fileID: 11400000, guid: ddf512d8a8a488047a07bda92c5cccac, type: 2}
+  - {fileID: 11400000, guid: ddf512d8a8a488047a07bda92c5cccac, type: 2}
