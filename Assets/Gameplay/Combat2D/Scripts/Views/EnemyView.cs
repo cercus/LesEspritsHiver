@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 
@@ -12,39 +13,28 @@ public class EnemyView : CombatantView
     [Header("View")]
     [SerializeField] private SpriteRenderer intentionRenderer;
 
-    public EnemyIntentionData CurrentIntention { get; private set; }
-    public int AttackPower { get; private set; }
+    public EnemyBrain Brain { get; private set; }
+
+    public EnemyPattern CurrentPattern { get; private set; }
+
 
     public void Setup(EnemyData enemyData)
     {
-        DecideNextIntention();
         SetupBase(enemyData.Health, enemyData.Image, enemyData.name);
+        Brain = new EnemyBrain(this, enemyData);
+        Brain.DecideNext();
         
     }
 
-    public void DecideNextIntention()
+    public void SetPattern(EnemyPattern pattern)
     {
-        // Exemple simple (aléatoire)
-        int roll = Random.Range(0, 100);
-
-        if(roll < 25)
-        {
-            SetIntention(attackIntention, 1);
-            
-        } else if(roll < 50)
-        {
-            SetIntention(buffIntention, 1);
-        } else
-        {
-            SetIntention(defendIntention, 1);
-        }
+        CurrentPattern = pattern;
+        intentionRenderer.sprite = pattern.Intention.icon;
     }
 
-    private void SetIntention(EnemyIntentionData intention, int attackPower)
+    public void ExecuteCurrentAction()
     {
-        CurrentIntention = intention;
-        AttackPower = attackPower;
-        intentionRenderer.sprite = intention.icon;
+        CurrentPattern.Action.Execute(this);
     }
 
 }

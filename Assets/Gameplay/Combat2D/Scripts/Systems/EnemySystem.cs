@@ -13,7 +13,7 @@ public class EnemySystem : Singleton<EnemySystem>
     void OnEnable()
     {
         ActionSystem.AttachPerformer<EnemyTurnGA>(EnemyTurnPerformer);       
-        ActionSystem.AttachPerformer<AttackHeroGA>(AttackHeroPerformer);
+        //ActionSystem.AttachPerformer<AttackHeroGA>(AttackHeroPerformer);
         ActionSystem.AttachPerformer<KillEnemyGA>(KillEnemyPerformer);
 
     }
@@ -21,7 +21,7 @@ public class EnemySystem : Singleton<EnemySystem>
     void OnDisable()
     {
         ActionSystem.DetachPerformer<EnemyTurnGA>();
-        ActionSystem.DetachPerformer<AttackHeroGA>(); 
+        //ActionSystem.DetachPerformer<AttackHeroGA>(); 
         ActionSystem.DetachPerformer<KillEnemyGA>();     
     }
 
@@ -37,14 +37,17 @@ public class EnemySystem : Singleton<EnemySystem>
     {
         foreach (EnemyView enemyView in enemyBoardView.EnemyViews)
         {
-            AttackHeroGA attackHeroGA = new(enemyView);
-            ActionSystem.Instance.AddRection(attackHeroGA);
-            enemyView.DecideNextIntention();
+            enemyView.ExecuteCurrentAction();
+            enemyView.Brain.DecideNext();
+            yield return new WaitForSeconds(0.2f);
+            //AttackHeroGA attackHeroGA = new(enemyView);
+            //ActionSystem.Instance.AddRection(attackHeroGA);
+            //enemyView.DecideNextIntention();
         }
-        Debug.Log("============");
         yield return null;
     }
 
+/*
     private IEnumerator AttackHeroPerformer(AttackHeroGA attackHeroGA)
     {
         EnemyView attacker = attackHeroGA.Attacker;
@@ -54,7 +57,7 @@ public class EnemySystem : Singleton<EnemySystem>
         DealDamageGA dealDamageGA = new(attacker.AttackPower,new(){HeroSystem.Instance.HeroView});
         ActionSystem.Instance.AddRection(dealDamageGA);
     }
-
+*/
     private IEnumerator KillEnemyPerformer(KillEnemyGA killEnemyGA)
     {
         yield return enemyBoardView.RemoveEnemy(killEnemyGA.EnemyView);

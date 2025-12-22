@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "Data/Enemy")]
@@ -10,4 +11,12 @@ public class EnemyData : ScriptableObject
     [field: SerializeField] public int AttackPower { get; private set; }
     
     [field: SerializeField] public int DefensePower { get; private set; }
+
+    public EnemyBehaviorType behaviorType;
+
+    // Ennemis normaux
+    public List<EnemyPattern> randomPatterns;
+
+    // Boss
+    public EnemyPatternSequence patternSequence;
 }
