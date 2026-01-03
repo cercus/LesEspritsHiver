@@ -6,8 +6,17 @@ public class MatchSetupSystem : MonoBehaviour
 {
     
     [SerializeField] private HeroData heroData;
+    [SerializeField] private Camera battleCamera;
+
+    [SerializeField] private ManaUI manaUI;
+
+    [SerializeField] private GameObject damageVFX;
+
     void Start()
     {
+        MouseUtil.BindCamera(battleCamera);
+        ManaSystem.Instance.BindScene(manaUI);
+        DamageSystem.Instance.BindScene(damageVFX);
 
         SetupHero();
         SetupEnemies();
@@ -15,6 +24,12 @@ public class MatchSetupSystem : MonoBehaviour
         
     }
 
+/*
+    void OnDestroy()
+    {
+        ManaSystem.Instance.UnbindScene();
+    }
+*/
     private void SetupCardAndMana()
     {
         RefillManaGA refillManaGA = new();

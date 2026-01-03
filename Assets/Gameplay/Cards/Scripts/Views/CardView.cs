@@ -69,6 +69,7 @@ public class CardView : MonoBehaviour
         if(Card.ManualTargetEffect != null)
         {
             EnemyView target = ManualTargetSystem.Instance.EndTargeting(MouseUtil.GetMousePositionInWorldSpace(-1));
+            Debug.Log("MouseUtil.GetMousePositionInWorldSpace(-1)="+MouseUtil.GetMousePositionInWorldSpace(-1));
             if(target != null && ManaSystem.Instance.HasEnoughMana(Card.Mana))
             {
                 PlayCardGA playCardGA = new(Card, target);

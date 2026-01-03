@@ -3,9 +3,39 @@ using UnityEngine;
 
 public class ManaSystem : Singleton<ManaSystem>
 {
-    [SerializeField] private ManaUI manaUI;
+    private ManaUI manaUI;
     private const int MAX_MANA = 3;
     private int currentMana = MAX_MANA;
+    private bool isBound;
+
+    protected override void Awake()
+    {
+        base.Awake();
+        DontDestroyOnLoad(gameObject);
+    }
+
+    // 🔗 Binding de la scène
+    public void BindScene(ManaUI manaUI)
+    {
+        this.manaUI = manaUI;
+        isBound = true;
+
+        // synchro immédiate
+        manaUI.UpdateManaText(currentMana);
+    }
+
+    // 🧹 Optionnel mais recommandé
+    public void UnbindScene()
+    {
+        manaUI = null;
+        isBound = false;
+    }
+
+    public void ResetMana()
+    {
+        currentMana = MAX_MANA;
+        UpdateUI();
+    }
 
     void OnEnable()
     {
@@ -45,5 +75,16 @@ public class ManaSystem : Singleton<ManaSystem>
     {
         RefillManaGA refillManaGA = new();
         ActionSystem.Instance.AddRection(refillManaGA);
+    }
+
+    private void UpdateUI()
+    {
+        if (!isBound)
+        {
+            Debug.LogWarning("ManaSystem utilisé sans ManaUI bindée");
+            return;
+        }
+
+        manaUI.UpdateManaText(currentMana);
     }
 }

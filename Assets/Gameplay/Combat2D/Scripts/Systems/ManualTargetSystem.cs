@@ -6,11 +6,13 @@ public class ManualTargetSystem : Singleton<ManualTargetSystem>
 
     public EnemyView EndTargeting(Vector3 endPosition)
     {
-        if(Physics.Raycast(endPosition, Vector3.forward, out RaycastHit hit, 10f, targetLayerMask) 
-        && hit.collider != null && hit.transform.TryGetComponent(out EnemyView enemyView))
+        Vector3 rayStart = endPosition + Vector3.back * 5f;
+
+        if (Physics.Raycast(rayStart, Vector3.forward, out RaycastHit hit, 20f, targetLayerMask))
         {
-            return enemyView;
+            return hit.transform.GetComponentInParent<EnemyView>();
         }
+
         return null;
     }
 }

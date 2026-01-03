@@ -1,9 +1,32 @@
 using System.Collections;
 using UnityEngine;
 
-public class DamageSystem : MonoBehaviour
+public class DamageSystem : Singleton<DamageSystem>
 {
-    [SerializeField] private GameObject damageVFX;
+    private GameObject damageVFX;
+    private bool isBound;
+
+    protected override void Awake()
+    {
+        base.Awake();
+        DontDestroyOnLoad(gameObject);
+    }
+
+    // 🔗 Binding de la scène
+    public void BindScene(GameObject damageVFX)
+    {
+        this.damageVFX = damageVFX;
+        isBound = true;
+
+        
+    }
+
+    // 🧹 Optionnel mais recommandé
+    public void UnbindScene()
+    {
+        damageVFX = null;
+        isBound = false;
+    }
 
     void OnEnable()
     {
