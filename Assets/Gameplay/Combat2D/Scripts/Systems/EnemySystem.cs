@@ -68,6 +68,7 @@ public class EnemySystem : Singleton<EnemySystem>
         
         if (enemyBoardView.EnemyViews.Count == 0)
         {
+            yield return new WaitForSeconds(1.5f);
             BattleManager.Instance.EndBattle(true);
         }
     }

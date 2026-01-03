@@ -1,4 +1,6 @@
 using UnityEngine.SceneManagement;
+using System.Collections;
+using UnityEngine;
 
 public class BattleManager : Singleton<BattleManager>
 {
