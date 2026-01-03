@@ -25,7 +25,11 @@ MonoBehaviour:
   - m_enabled: 1
     m_path: Assets/Scenes/MainMenu.unity
   - m_enabled: 1
-    m_path: Assets/Scenes/Worlds/World01/Exploration_World01.unity
+    m_path: Assets/Scenes/Bestiary/Bestiary.unity
+  - m_enabled: 1
+    m_path: Assets/Scenes/Battle/Battle.unity
+  - m_enabled: 1
+    m_path: Assets/Scenes/Worlds/World01.unity
   m_HasScriptingDefines: 0
   m_ScriptingDefines: []
   m_PlayerSettingsYaml:

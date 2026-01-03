@@ -788,7 +788,7 @@ Transform:
   m_GameObject: {fileID: 1023413430}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.0102, y: 0, z: -1}
+  m_LocalPosition: {x: 0.010192871, y: 0, z: -1}
   m_LocalScale: {x: 1.8921771, y: 1.375, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1015,6 +1015,10 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 99
       objectReference: {fileID: 0}
+    - target: {fileID: 6189431296335041515, guid: 91b2559f84f639f40a51c5b2e90db528, type: 3}
+      propertyPath: dropLayer.m_Bits
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9200465612904261823, guid: 91b2559f84f639f40a51c5b2e90db528, type: 3}
       propertyPath: m_Name
       value: CardViewHover
@@ -1205,13 +1209,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1176732874}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1133080262}
   - {fileID: 1023413431}
+  - {fileID: 1133080262}
   - {fileID: 2124620683}
   - {fileID: 1351478729}
   - {fileID: 1263930734}
@@ -2265,11 +2269,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MatchSetupSystem
   heroData: {fileID: 11400000, guid: cfc1aa9bd00486d4ca9c670113ca7753, type: 2}
   enemyDatas:
-  - {fileID: 11400000, guid: 19496dbb63d42ea4d94cf937db9c7d35, type: 2}
-  - {fileID: 11400000, guid: 19496dbb63d42ea4d94cf937db9c7d35, type: 2}
-  - {fileID: 11400000, guid: 19496dbb63d42ea4d94cf937db9c7d35, type: 2}
-  - {fileID: 11400000, guid: 19496dbb63d42ea4d94cf937db9c7d35, type: 2}
-  - {fileID: 11400000, guid: 19496dbb63d42ea4d94cf937db9c7d35, type: 2}
+  - {fileID: 11400000, guid: 9895118c99555e9488bca2c62c1fc84b, type: 2}
+  - {fileID: 11400000, guid: 9895118c99555e9488bca2c62c1fc84b, type: 2}
+  - {fileID: 11400000, guid: 9895118c99555e9488bca2c62c1fc84b, type: 2}
+  - {fileID: 11400000, guid: 9895118c99555e9488bca2c62c1fc84b, type: 2}
+  - {fileID: 11400000, guid: 9895118c99555e9488bca2c62c1fc84b, type: 2}
 --- !u!1 &2073095254
 GameObject:
   m_ObjectHideFlags: 0
@@ -2654,9 +2658,9 @@ PrefabInstance:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 1176732875}
   - {fileID: 1463678857}
   - {fileID: 471146785}
-  - {fileID: 1176732875}
   - {fileID: 151746648}
   - {fileID: 43730920}
   - {fileID: 1369963404}

@@ -3,8 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
-  tags:
-  - FxTemporaire
+  tags: []
   layers:
   - Default
   - TransparentFX
@@ -12,8 +11,8 @@ TagManager:
   - 
   - Water
   - UI
-  - DropArea
-  - EnemyView
+  - 
+  - 
   - 
   - 
   - 
@@ -41,6 +40,75 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Base
+    uniqueID: 952339621
+    locked: 0
+  - name: Wall
+    uniqueID: 3658782067
+    locked: 0
+  - name: Paths
+    uniqueID: 3149387737
+    locked: 0
+  - name: Extras
+    uniqueID: 2167278061
+    locked: 0
+  - name: World
+    uniqueID: 1855000771
+    locked: 0
+  - name: UI
+    uniqueID: 2367556969
+    locked: 0
+  - name: 
+    uniqueID: 2278110597
+    locked: 0
+  - name: 
+    uniqueID: 3346240063
+    locked: 0
+  - name: 
+    uniqueID: 3064530231
+    locked: 0
+  - name: 
+    uniqueID: 3633898875
+    locked: 0
+  - name: 
+    uniqueID: 1767021329
+    locked: 0
+  - name: 
+    uniqueID: 3256367967
+    locked: 0
+  - name: 
+    uniqueID: 712584117
+    locked: 0
+  - name: 
+    uniqueID: 800437625
+    locked: 0
+  - name: 
+    uniqueID: 3060484659
+    locked: 0
+  - name: 
+    uniqueID: 1351969533
+    locked: 0
+  - name: 
+    uniqueID: 2350938913
+    locked: 0
+  - name: 
+    uniqueID: 3661781487
+    locked: 0
+  - name: 
+    uniqueID: 3488600891
+    locked: 0
+  - name: 
+    uniqueID: 3326590199
+    locked: 0
+  - name: 
+    uniqueID: 3199569611
+    locked: 0
+  - name: 
+    uniqueID: 3462647933
+    locked: 0
+  - name: 
+    uniqueID: 3023034027
     locked: 0
   m_RenderingLayers:
   - Default

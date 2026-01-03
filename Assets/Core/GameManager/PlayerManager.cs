@@ -26,7 +26,6 @@ public class PlayerManager : MonoBehaviour
             playerInstance = Instantiate(playerPrefab);
             DontDestroyOnLoad(playerInstance);
         }
-        Debug.LogError("position : " + spawnPoint.position);
         playerInstance.transform.position = spawnPoint.position;
         playerInstance.transform.rotation = spawnPoint.rotation;
     }

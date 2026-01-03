@@ -19,5 +19,6 @@ public class GameManager : MonoBehaviour
     {
         // Charge MainMenu
         UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
+        
     }
 }

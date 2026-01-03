@@ -60,6 +60,15 @@ public class EnemySystem : Singleton<EnemySystem>
 */
     private IEnumerator KillEnemyPerformer(KillEnemyGA killEnemyGA)
     {
+        SaveSystem.Instance.Data.bestiary.Discover(killEnemyGA.EnemyView.EnemyData.Id);
+        SaveSystem.Instance.Data.bestiary.RegisterKill(killEnemyGA.EnemyView.EnemyData.Id);
+        SaveSystem.Instance.Save();
+
         yield return enemyBoardView.RemoveEnemy(killEnemyGA.EnemyView);
+        
+        if (enemyBoardView.EnemyViews.Count == 0)
+        {
+            BattleManager.Instance.EndBattle(true);
+        }
     }
 }

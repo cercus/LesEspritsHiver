@@ -17,9 +17,13 @@ public class EnemyView : CombatantView
 
     public EnemyPattern CurrentPattern { get; private set; }
 
+    public EnemyData EnemyData { get; private set; }
+
 
     public void Setup(EnemyData enemyData)
     {
+        Debug.Log("EnemyView ok");
+        EnemyData = enemyData;
         SetupBase(enemyData.Health, enemyData.Image, enemyData.name);
         Brain = new EnemyBrain(this, enemyData);
         Brain.DecideNext();

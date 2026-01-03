@@ -7,7 +7,6 @@ public class EnemyAttackAction : EnemyActionData
 
     public override void Execute(EnemyView enemy)
     {
-        Debug.Log("damage="+damage);
         ActionSystem.Instance.AddRection(
             new DealDamageGA(damage, new() { HeroSystem.Instance.HeroView })
         );
