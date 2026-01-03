@@ -488,6 +488,8 @@ GameObject:
   - component: {fileID: 1682909807}
   - component: {fileID: 1682909806}
   - component: {fileID: 1682909808}
+  - component: {fileID: 1682909809}
+  - component: {fileID: 1682909810}
   m_Layer: 0
   m_Name: --- Battle ---
   m_TagString: Untagged
@@ -534,6 +536,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86a3988502d669c40a0b5afb021fc177, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DamageSystem
+--- !u!114 &1682909809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1682909805}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbc62e7573d0780448818365703817f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EffectSystem
+--- !u!114 &1682909810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1682909805}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 107b1957451199845925d625e8c47fd2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HeroSystem
 --- !u!1 &1703507125
 GameObject:
   m_ObjectHideFlags: 0

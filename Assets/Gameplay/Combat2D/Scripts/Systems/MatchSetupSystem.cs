@@ -12,11 +12,14 @@ public class MatchSetupSystem : MonoBehaviour
 
     [SerializeField] private GameObject damageVFX;
 
+    
+
     void Start()
     {
         MouseUtil.BindCamera(battleCamera);
         ManaSystem.Instance.BindScene(manaUI);
         DamageSystem.Instance.BindScene(damageVFX);
+        
 
         SetupHero();
         SetupEnemies();

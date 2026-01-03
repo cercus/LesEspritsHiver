@@ -4,7 +4,7 @@ using UnityEngine;
 public class DamageSystem : Singleton<DamageSystem>
 {
     private GameObject damageVFX;
-    private bool isBound;
+    //private bool isBound;
 
     protected override void Awake()
     {
@@ -16,7 +16,7 @@ public class DamageSystem : Singleton<DamageSystem>
     public void BindScene(GameObject damageVFX)
     {
         this.damageVFX = damageVFX;
-        isBound = true;
+        //isBound = true;
 
         
     }
@@ -25,7 +25,7 @@ public class DamageSystem : Singleton<DamageSystem>
     public void UnbindScene()
     {
         damageVFX = null;
-        isBound = false;
+        //isBound = false;
     }
 
     void OnEnable()
