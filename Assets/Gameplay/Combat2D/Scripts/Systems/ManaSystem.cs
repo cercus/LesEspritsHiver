@@ -5,7 +5,7 @@ public class ManaSystem : Singleton<ManaSystem>
 {
     private ManaUI manaUI;
     private const int MAX_MANA = 3;
-    private int currentMana = MAX_MANA;
+    private int currentMana;
     private bool isBound;
 
     protected override void Awake()
@@ -19,6 +19,7 @@ public class ManaSystem : Singleton<ManaSystem>
     {
         this.manaUI = manaUI;
         isBound = true;
+        currentMana = MAX_MANA;
 
         // synchro immédiate
         manaUI.UpdateManaText(currentMana);

@@ -20,7 +20,7 @@ public class EnemySystem : Singleton<EnemySystem>
     public void BindScene(EnemyBoardView enemyBoardView)
     {
         this.enemyBoardView = enemyBoardView;
-        this.Enemies = enemyBoardView.EnemyViews;
+        Enemies = enemyBoardView.EnemyViews;
 
     }
 

@@ -5,12 +5,30 @@ using UnityEngine;
 
 public class CardSystem : Singleton<CardSystem>
 {
-    [SerializeField] private HandView handView;
-    [SerializeField] private Transform drawPilePoint;
-    [SerializeField] private Transform discardPilePoint;
-    private readonly List<Card> drawPile = new();
-    private readonly List<Card> discardPile = new();
-    private readonly List<Card> hand = new();
+    private HandView handView;
+    private Transform drawPilePoint;
+    private Transform discardPilePoint;
+    private List<Card> drawPile;
+    private List<Card> discardPile;
+    private List<Card> hand;
+
+    protected override void Awake()
+    {
+        base.Awake();
+        DontDestroyOnLoad(gameObject);
+    }
+
+    // 🔗 Binding de la scène
+    public void BindScene(HandView handView, Transform drawPilePoint, Transform discardPilePoint)
+    {
+        this.handView = handView;
+        this.drawPilePoint = drawPilePoint;
+        this.discardPilePoint = discardPilePoint;
+        drawPile = new();
+        discardPile = new();
+        hand = new();
+
+    }
 
     void OnEnable()
     {

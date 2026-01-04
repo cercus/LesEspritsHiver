@@ -16,6 +16,12 @@ public class MatchSetupSystem : MonoBehaviour
 
     [SerializeField] private EnemyBoardView enemyBoardView;
 
+    [SerializeField] private HandView handView;
+    [SerializeField] private Transform drawPilePoint;
+    [SerializeField] private Transform discardPilePoint;
+
+    [SerializeField] private CardView cardViewHover;
+
     
 
     void Start()
@@ -25,6 +31,8 @@ public class MatchSetupSystem : MonoBehaviour
         DamageSystem.Instance.BindScene(damageVFX);
         ManualTargetSystem.Instance.BindScene(targetLayerMask);
         EnemySystem.Instance.BindScene(enemyBoardView);
+        CardSystem.Instance.BindScene(handView, drawPilePoint, discardPilePoint);
+        CardViewHoverSystem.Instance.BindScene(cardViewHover);
         
 
         SetupHero();
