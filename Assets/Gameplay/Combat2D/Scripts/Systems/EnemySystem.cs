@@ -6,9 +6,23 @@ using UnityEngine;
 public class EnemySystem : Singleton<EnemySystem>
 {
 
-    [SerializeField] private EnemyBoardView enemyBoardView;
-    public List<EnemyView> Enemies => enemyBoardView.EnemyViews;
+    private EnemyBoardView enemyBoardView;
+    //public List<EnemyView> Enemies => enemyBoardView.EnemyViews;
+    public List<EnemyView> Enemies;
 
+    protected override void Awake()
+    {
+        base.Awake();
+        DontDestroyOnLoad(gameObject);
+    }
+
+    // 🔗 Binding de la scène
+    public void BindScene(EnemyBoardView enemyBoardView)
+    {
+        this.enemyBoardView = enemyBoardView;
+        this.Enemies = enemyBoardView.EnemyViews;
+
+    }
 
     void OnEnable()
     {

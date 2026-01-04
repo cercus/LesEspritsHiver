@@ -492,6 +492,8 @@ GameObject:
   - component: {fileID: 1682909810}
   - component: {fileID: 1682909811}
   - component: {fileID: 1682909812}
+  - component: {fileID: 1682909813}
+  - component: {fileID: 1682909814}
   m_Layer: 0
   m_Name: --- Battle ---
   m_TagString: Untagged
@@ -586,6 +588,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b128bd01d714750449651065a3adb489, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ManualTargetSystem
+--- !u!114 &1682909813
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1682909805}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ee27674c62c84f479a24404321ddaa2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ActionSystem
+--- !u!114 &1682909814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1682909805}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34c782dac5d25ad40b8ac52adfd24161, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemySystem
+  Enemies: []
 --- !u!1 &1703507125
 GameObject:
   m_ObjectHideFlags: 0

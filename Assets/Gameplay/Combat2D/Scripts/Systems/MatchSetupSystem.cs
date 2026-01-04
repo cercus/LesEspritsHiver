@@ -14,6 +14,8 @@ public class MatchSetupSystem : MonoBehaviour
 
     [SerializeField] private LayerMask targetLayerMask;
 
+    [SerializeField] private EnemyBoardView enemyBoardView;
+
     
 
     void Start()
@@ -22,6 +24,7 @@ public class MatchSetupSystem : MonoBehaviour
         ManaSystem.Instance.BindScene(manaUI);
         DamageSystem.Instance.BindScene(damageVFX);
         ManualTargetSystem.Instance.BindScene(targetLayerMask);
+        EnemySystem.Instance.BindScene(enemyBoardView);
         
 
         SetupHero();
