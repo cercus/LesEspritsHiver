@@ -490,6 +490,8 @@ GameObject:
   - component: {fileID: 1682909808}
   - component: {fileID: 1682909809}
   - component: {fileID: 1682909810}
+  - component: {fileID: 1682909811}
+  - component: {fileID: 1682909812}
   m_Layer: 0
   m_Name: --- Battle ---
   m_TagString: Untagged
@@ -560,6 +562,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 107b1957451199845925d625e8c47fd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HeroSystem
+--- !u!114 &1682909811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1682909805}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35e9b89e250ed1047b4abe81fb088bce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Interactions
+--- !u!114 &1682909812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1682909805}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b128bd01d714750449651065a3adb489, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ManualTargetSystem
 --- !u!1 &1703507125
 GameObject:
   m_ObjectHideFlags: 0

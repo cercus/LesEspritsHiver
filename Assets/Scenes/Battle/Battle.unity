@@ -349,7 +349,6 @@ Transform:
   - {fileID: 1389500510}
   - {fileID: 2075905361}
   - {fileID: 2032275332}
-  - {fileID: 1468578039}
   - {fileID: 1444134555}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1634,7 +1633,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1444134555}
-  - component: {fileID: 1444134556}
   m_Layer: 0
   m_Name: ManualTargetSystem
   m_TagString: Untagged
@@ -1657,21 +1655,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 151746648}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1444134556
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1444134554}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b128bd01d714750449651065a3adb489, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ManualTargetSystem
-  targetLayerMask:
-    serializedVersion: 2
-    m_Bits: 128
 --- !u!1 &1461658950
 GameObject:
   m_ObjectHideFlags: 0
@@ -1780,50 +1763,6 @@ Transform:
   - {fileID: 1932981066}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1468578038
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1468578039}
-  - component: {fileID: 1468578040}
-  m_Layer: 0
-  m_Name: Interactions
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1468578039
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1468578038}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 151746648}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1468578040
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1468578038}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 35e9b89e250ed1047b4abe81fb088bce, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Interactions
 --- !u!1 &1505648309
 GameObject:
   m_ObjectHideFlags: 0
@@ -2122,6 +2061,9 @@ MonoBehaviour:
   battleCamera: {fileID: 1277443698}
   manaUI: {fileID: 1072387692}
   damageVFX: {fileID: 5880797563127281583, guid: 265d3a5ba69981a4698ceabcedf368b0, type: 3}
+  targetLayerMask:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!1 &2073095254
 GameObject:
   m_ObjectHideFlags: 0

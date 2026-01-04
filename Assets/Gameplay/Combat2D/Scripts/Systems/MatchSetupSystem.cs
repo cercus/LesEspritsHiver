@@ -12,6 +12,8 @@ public class MatchSetupSystem : MonoBehaviour
 
     [SerializeField] private GameObject damageVFX;
 
+    [SerializeField] private LayerMask targetLayerMask;
+
     
 
     void Start()
@@ -19,6 +21,7 @@ public class MatchSetupSystem : MonoBehaviour
         MouseUtil.BindCamera(battleCamera);
         ManaSystem.Instance.BindScene(manaUI);
         DamageSystem.Instance.BindScene(damageVFX);
+        ManualTargetSystem.Instance.BindScene(targetLayerMask);
         
 
         SetupHero();
