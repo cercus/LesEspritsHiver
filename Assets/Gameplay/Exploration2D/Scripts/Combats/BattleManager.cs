@@ -25,6 +25,10 @@ public class BattleManager : Singleton<BattleManager>
         {
             MapProgression.Instance.MarkNodeCompleted(BattleContext.CurrentNode);
         }
+        else if(!victory && BattleContext.CurrentNode != null)
+        {
+            Debug.Log("Mort du heros");
+        }
         BattleContext.CurrentNode = null;
         BattleContext.Enemies = null;
         SceneManager.LoadScene("World01");

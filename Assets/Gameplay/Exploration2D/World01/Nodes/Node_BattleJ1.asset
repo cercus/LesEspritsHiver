@@ -15,4 +15,6 @@ MonoBehaviour:
   nameNode: Combat J1
   nodeId: j1
   type: 1
+  worldName: world01
+  combat: {fileID: 0}
   nextNodes: []

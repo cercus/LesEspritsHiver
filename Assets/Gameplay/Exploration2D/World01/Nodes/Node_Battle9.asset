@@ -15,5 +15,7 @@ MonoBehaviour:
   nameNode: Combat 9
   nodeId: 9
   type: 2
+  worldName: world01
+  combat: {fileID: 0}
   nextNodes:
   - {fileID: 11400000, guid: 7f540720310a94e478d2588deb037d19, type: 2}

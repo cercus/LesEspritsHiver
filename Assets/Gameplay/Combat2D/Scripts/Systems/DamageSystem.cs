@@ -43,10 +43,17 @@ public class DamageSystem : Singleton<DamageSystem>
     {
         foreach (CombatantView target in dealDamageGA.Targets)
         {
-            Debug.Log("damageOriginal="+dealDamageGA.Amount);
+           
             target.Damage(dealDamageGA.Amount);
             Instantiate(damageVFX, target.transform.position, Quaternion.identity);
             yield return new WaitForSeconds(0.15f);
+            
+            // Cas où le heros n'a plus de vie
+            if(target is HeroView heroView && target.CurrentHealth <= 0)
+            {
+                BattleManager.Instance.EndBattle(false);
+            }
+            
             if(target.CurrentHealth <= 0)
             {
                 if(target is EnemyView enemyView)

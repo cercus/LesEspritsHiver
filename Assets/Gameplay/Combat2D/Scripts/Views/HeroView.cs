@@ -12,8 +12,8 @@ public class HeroView : CombatantView
         if (HeroSystem.Instance)
             HeroSystem.Instance.UnbindScene();
     }
-    public void Setup(HeroData heroData)
+    public void Setup(int health, Sprite image, string name)
     {
-        SetupBase(heroData.Health, heroData.Image, heroData.name);
+        SetupBase(health, image, name);
     }
 }

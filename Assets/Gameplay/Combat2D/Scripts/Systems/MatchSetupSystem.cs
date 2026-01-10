@@ -5,7 +5,7 @@ using UnityEngine;
 public class MatchSetupSystem : MonoBehaviour
 {
     
-    [SerializeField] private HeroData heroData;
+    
     [SerializeField] private Camera battleCamera;
 
     [SerializeField] private ManaUI manaUI;
@@ -22,6 +22,9 @@ public class MatchSetupSystem : MonoBehaviour
 
     [SerializeField] private CardView cardViewHover;
 
+    [SerializeField] private PlayerDatabase heroDatabase;
+    [SerializeField] private HeroView heroView;
+
     
 
     void Start()
@@ -33,6 +36,7 @@ public class MatchSetupSystem : MonoBehaviour
         EnemySystem.Instance.BindScene(enemyBoardView);
         CardSystem.Instance.BindScene(handView, drawPilePoint, discardPilePoint);
         CardViewHoverSystem.Instance.BindScene(cardViewHover);
+        HeroSystem.Instance.BindScene(heroView);
         
 
         SetupHero();
@@ -72,6 +76,7 @@ public class MatchSetupSystem : MonoBehaviour
 
     private void SetupHero()
     {
+        HeroData heroData = heroDatabase.Get(SaveSystem.Instance.Data.hero.id);
         HeroSystem.Instance.Setup(heroData);
         CardSystem.Instance.Setup(heroData.Deck);
     }

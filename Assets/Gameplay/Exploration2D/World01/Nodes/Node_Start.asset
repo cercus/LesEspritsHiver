@@ -15,6 +15,8 @@ MonoBehaviour:
   nameNode: SpawnPoint
   nodeId: 0
   type: 0
+  worldName: world01
+  combat: {fileID: 0}
   nextNodes:
   - {fileID: 11400000, guid: 491b58cef5b525f46b494ef91e769849, type: 2}
   - {fileID: 11400000, guid: 981e247cc65f2e148b4f2c909983da7d, type: 2}

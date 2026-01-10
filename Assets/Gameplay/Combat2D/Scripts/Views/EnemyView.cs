@@ -22,7 +22,6 @@ public class EnemyView : CombatantView
 
     public void Setup(EnemyData enemyData)
     {
-        Debug.Log("EnemyView ok");
         EnemyData = enemyData;
         SetupBase(enemyData.Health, enemyData.Image, enemyData.name);
         Brain = new EnemyBrain(this, enemyData);

@@ -4,15 +4,13 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Data/Hero")]
 public class HeroData : ScriptableObject
 {
-     [field: SerializeField] public string Name { get; private set; }
+    [field: SerializeField] public string Id { get; private set; }
+    [field: SerializeField] public string Name { get; private set; }
     [field: SerializeField] public Sprite Image { get; private set; }
-    [field: SerializeField] public int Health { get; private set; }
+    [field: SerializeField] public int Health { get; private set; } = 20;
     [field: SerializeField] public List<CardData> Deck { get; private set; }
     [field: SerializeField] public int Experience { get; private set; }
     [field: SerializeField] public int Niveau {get; private set; }
+    [field: SerializeField] public string Description {get; private set; }
     
-
-
-
-
 }

@@ -52,6 +52,7 @@ public class EnemySystem : Singleton<EnemySystem>
         foreach (EnemyView enemyView in enemyBoardView.EnemyViews)
         {
             enemyView.ExecuteCurrentAction();
+            
             enemyView.Brain.DecideNext();
             yield return new WaitForSeconds(0.2f);
             //AttackHeroGA attackHeroGA = new(enemyView);

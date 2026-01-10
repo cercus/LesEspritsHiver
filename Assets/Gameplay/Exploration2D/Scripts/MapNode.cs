@@ -17,6 +17,7 @@ public class MapNode : ScriptableObject
     public string nameNode;
     public string nodeId;
     public NodeType type;
+    public string worldName;
 
     public CombatDefinition combat;
 

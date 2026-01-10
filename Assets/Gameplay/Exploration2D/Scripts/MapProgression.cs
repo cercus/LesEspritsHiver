@@ -1,23 +1,51 @@
+using System;
 using System.Collections.Generic;
 
 public class MapProgression : Singleton<MapProgression>
 {
-    private HashSet<MapNode> completedNodes = new();
-    private HashSet<MapNode> unlockedNodes = new();
+    private HashSet<string> completedNodes = new();
+    private HashSet<string> unlockedNodes = new();
+
+    private MapSaveData Save => SaveSystem.Instance.Data.mapProgression;
+
+    protected void Awake()
+    {
+        base.Awake();
+        LoadFromSave();
+    }
+
+    public bool IsEmpty()
+{
+    return SaveSystem.Instance.Data.mapProgression.completedNodes.Count == 0;
+}
+
+    private string Key(MapNode node)=> $"{node.worldName}:{node.nodeId}";
+
+    private void LoadFromSave()
+    {
+        completedNodes = new HashSet<string>(Save.completedNodes);
+        unlockedNodes = new HashSet<string>(Save.unlockedNodes);
+    }
 
     public void MarkNodeCompleted(MapNode node)
     {
-        completedNodes.Add(node);
+        string key = Key(node);
+
+        completedNodes.Add(key);
+        Save.completedNodes.Add(key);
 
         foreach (var next in node.nextNodes)
         {
-            unlockedNodes.Add(next);
+            string nextKey = Key(next);
+            unlockedNodes.Add(nextKey);
+            Save.unlockedNodes.Add(nextKey);
         }
+        SaveSystem.Instance.Save();
     }
 
     public bool IsCompleted(MapNode node)
-        => completedNodes.Contains(node);
+        => completedNodes.Contains(Key(node));
 
     public bool IsUnlocked(MapNode node)
-        => unlockedNodes.Contains(node);
+        => unlockedNodes.Contains(Key(node));
 }

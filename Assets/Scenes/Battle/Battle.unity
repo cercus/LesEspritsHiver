@@ -1887,7 +1887,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9689d1df1bb3ba3449b1518afb4a457c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MatchSetupSystem
-  heroData: {fileID: 11400000, guid: cfc1aa9bd00486d4ca9c670113ca7753, type: 2}
   battleCamera: {fileID: 1277443698}
   manaUI: {fileID: 1072387692}
   damageVFX: {fileID: 5880797563127281583, guid: 265d3a5ba69981a4698ceabcedf368b0, type: 3}
@@ -1899,6 +1898,8 @@ MonoBehaviour:
   drawPilePoint: {fileID: 292407799}
   discardPilePoint: {fileID: 535123544}
   cardViewHover: {fileID: 1133080263}
+  heroDatabase: {fileID: 11400000, guid: 04d8234c725477a4296784411a0f9328, type: 2}
+  heroView: {fileID: 5502979816591187456}
 --- !u!1 &2073095254
 GameObject:
   m_ObjectHideFlags: 0
@@ -2187,6 +2188,17 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 70d1ab54b5114d24b954fc090b5b2c30, type: 3}
+--- !u!114 &5502979816591187456 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5381615557620544450, guid: 70d1ab54b5114d24b954fc090b5b2c30, type: 3}
+  m_PrefabInstance: {fileID: 5502979816591187455}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 419a40265bd9b1743af9b921011d35d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HeroView
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

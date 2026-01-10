@@ -13,26 +13,39 @@ public class MapManager : Singleton<MapManager>
 
     void Start()
     {
-        InitMap();
-        //RefreshNodes();
+        InitMapFromSave();
+        RefreshNodes();
+        RefreshRails();
     }
 
-    void InitMap()
+    void InitMapFromSave()
     {
+        nodeStates.Clear();
 
-        // Tous les nodes commencent LOCKED
+        // 1️⃣ Initialiser tous les nodes en LOCKED
         foreach (var view in nodeViews)
         {
             nodeStates[view.Node] = NodeState.Locked;
         }
-        MapProgression.Instance.MarkNodeCompleted(startNode.Node);
-        currentNode = startNode.Node;
-        nodeStates[currentNode] = NodeState.Completed;
-        // 2. Débloque automatiquement les nodes suivants
-        UnlockNextNodes(currentNode);
 
-        RefreshNodes();
-        RefreshRails();
+        // 2️⃣ Cas spécial : première partie → node de départ
+        if (MapProgression.Instance.IsEmpty())
+        {
+            MapProgression.Instance.MarkNodeCompleted(startNode.Node);
+        }
+
+        // 3️⃣ Appliquer la progression sauvegardée
+        foreach (var view in nodeViews)
+        {
+            if (MapProgression.Instance.IsCompleted(view.Node))
+            {
+                nodeStates[view.Node] = NodeState.Completed;
+            }
+            else if (MapProgression.Instance.IsUnlocked(view.Node))
+            {
+                nodeStates[view.Node] = NodeState.Available;
+            }
+        }
     }
 
     void RefreshNodes()
@@ -50,19 +63,10 @@ public class MapManager : Singleton<MapManager>
 
     public void SelectNode(MapNode node)
     {
-        if (nodeStates[node] != NodeState.Available)
+        if (!MapProgression.Instance.IsUnlocked(node))
             return;
 
         currentNode = node;
-
-        nodeStates[node] = NodeState.Completed;
-
-        UnlockNextNodes(node);
-
-        LaunchNode(node);
-
-        RefreshNodes();
-        RefreshRails();
     }
 
 
@@ -85,23 +89,6 @@ public class MapManager : Singleton<MapManager>
             bool visible = MapProgression.Instance.IsCompleted(rail.From);
 
             rail.SetVisible(visible);
-        }
-            /*
-            bool fromVisible =
-                nodeStates[rail.From] != NodeState.Locked;
-
-            bool toVisible =
-                nodeStates[rail.To] != NodeState.Locked;
-
-            rail.SetVisible(fromVisible && toVisible);
-            */
-        
-    }
-    void LaunchNode(MapNode node)
-    {
-
-        foreach (var next in node.nextNodes)
-        {
         }
         
     }

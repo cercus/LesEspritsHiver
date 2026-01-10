@@ -15,4 +15,6 @@ MonoBehaviour:
   nameNode: Boss 1
   nodeId: 10
   type: 5
+  worldName: world01
+  combat: {fileID: 0}
   nextNodes: []

@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c72ff922f8948984eb433270da3418c8, type: 3}
   m_Name: DefaultHero
   m_EditorClassIdentifier: Assembly-CSharp::HeroData
-  <Name>k__BackingField: "Default H\xE9ros"
+  <Id>k__BackingField: 1
+  <Name>k__BackingField: Bernard
   <Image>k__BackingField: {fileID: 21300000, guid: 178b5bc9063b15c43a22f94a7c85fc1a, type: 3}
-  <Health>k__BackingField: 50
+  <Health>k__BackingField: 20
   <Deck>k__BackingField:
   - {fileID: 11400000, guid: a154a903f12daf34383260a7d912f6c9, type: 2}
   - {fileID: 11400000, guid: a154a903f12daf34383260a7d912f6c9, type: 2}
@@ -24,3 +25,15 @@ MonoBehaviour:
   - {fileID: 11400000, guid: a154a903f12daf34383260a7d912f6c9, type: 2}
   - {fileID: 11400000, guid: ddf512d8a8a488047a07bda92c5cccac, type: 2}
   - {fileID: 11400000, guid: ddf512d8a8a488047a07bda92c5cccac, type: 2}
+  <Experience>k__BackingField: 0
+  <Niveau>k__BackingField: 0
+  <Description>k__BackingField: "<u><b>Histoire :</b></u>\\n\\nBernard n\u2019a pas
+    toujours eu de la chance dans la vie. D\xE9j\xE0 sa condition de Bernard l\u2019hermite
+    le force \xE0 porter sa maison sur son dos. Mais depuis son arriv\xE9e \xE0 la
+    for\xEAt d\u2019Arpos, il a beaucoup plus de chance. Surtout pendant l\u2019hiver
+    ! Et en plus il s\u2019est fait plein de nouveaux amis.\\n\\n<u><b>M\xE9caniques
+    du deck : </b></u>\\n\\nLe deck de Bernard se base sur une m\xE9canique connue
+    de tous, qui est \u201Cla RNG\u201D. La majorit\xE9 des cartes sp\xE9cifiques
+    \xE0 ce deck font lancer des d\xE9s \xE0 6 faces. Si le score est bas, les cartes
+    seront moins efficaces que les cartes des autres decks, si le score est haut,
+    les cartes sont d\xE9vastatrices. "
