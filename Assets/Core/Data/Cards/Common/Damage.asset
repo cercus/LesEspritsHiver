@@ -16,6 +16,7 @@ MonoBehaviour:
   <Description>k__BackingField: "Inflige 5 d\xE9gats a un ennemie"
   <mana>k__BackingField: 1
   <Image>k__BackingField: {fileID: 21300000, guid: 73fcb3f00d552e341975fc34ef0ed605, type: 3}
+  <Id>k__BackingField: common_baston
   <ManualTargetEffect>k__BackingField:
     rid: 5528427433656844552
   <OtherEffects>k__BackingField: []

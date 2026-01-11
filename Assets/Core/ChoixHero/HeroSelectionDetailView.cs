@@ -9,6 +9,7 @@ public class HeroSelectionDetailView : MonoBehaviour
 
     [SerializeField] private Transform deckGrid;
     [SerializeField] private CardEntryView cardPrefab;
+    [SerializeField] private CardDatabase cardDatabase;
 
     public void Show(HeroData hero)
     {
@@ -19,10 +20,10 @@ public class HeroSelectionDetailView : MonoBehaviour
         foreach (Transform child in deckGrid)
             Destroy(child.gameObject);
 
-        foreach (var card in hero.Deck)
+        foreach (string card in SaveSystem.Instance.Data.heroes[hero.Id].deckCardIds)
         {
             CardEntryView entry = Instantiate(cardPrefab, deckGrid);
-            entry.Setup(card);
+            entry.Setup(cardDatabase.Get(card));
         }
     }
 }

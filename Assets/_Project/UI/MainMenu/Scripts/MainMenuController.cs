@@ -11,6 +11,17 @@ public class MainMenuController : MonoBehaviour
         //SceneManager.LoadScene(scene);
     }
 
+    public void NewGame()
+    {
+        if(SaveSystem.Instance.Data == null)
+            SaveSystem.Instance.CreateNewSave();
+        else
+        {
+            SaveSystem.Instance.Load();
+        }
+        UnityEngine.SceneManagement.SceneManager.LoadScene("ChoixHero");
+    }
+
 
     public void QuitGame()
     {

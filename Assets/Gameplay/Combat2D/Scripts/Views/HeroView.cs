@@ -2,9 +2,10 @@ using UnityEngine;
 
 public class HeroView : CombatantView
 {
+    [SerializeField] private PlayerDatabase playerDatabase;
     private void Awake()
     {
-        HeroSystem.Instance.BindScene(this);
+        HeroSystem.Instance.BindScene(this, playerDatabase);
     }
 
     private void OnDestroy()

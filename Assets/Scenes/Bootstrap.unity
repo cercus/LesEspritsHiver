@@ -236,6 +236,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfb3bbab0df41ee44b7a012e3a23ee86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SaveSystem
+  playerDatabase: {fileID: 11400000, guid: 04d8234c725477a4296784411a0f9328, type: 2}
 --- !u!4 &366176168
 Transform:
   m_ObjectHideFlags: 0
@@ -305,6 +306,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1327660724}
   - component: {fileID: 1327660723}
+  - component: {fileID: 1327660725}
   m_Layer: 0
   m_Name: PlayerManager
   m_TagString: Untagged
@@ -340,6 +342,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1327660725
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1327660722}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 755bb11d1757b14438b140be998b5af1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerProfile
 --- !u!1 &1655291351
 GameObject:
   m_ObjectHideFlags: 0

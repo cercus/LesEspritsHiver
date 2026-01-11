@@ -7,6 +7,7 @@ public class CharacterSelectUI : MonoBehaviour
 {
     [Header("Database")]
     [SerializeField] private PlayerDatabase heroDatabase;
+    [SerializeField] private CardDatabase cardDatabase;
 
     [Header("Left Panel")]
     [SerializeField] private Transform tabsParent;
@@ -44,18 +45,19 @@ public class CharacterSelectUI : MonoBehaviour
         heroName.text = hero.Name;
         heroDescription.text = hero.Description;
 
-        RefreshDeck(hero.Deck);
+        RefreshDeck(SaveSystem.Instance.Data.heroes[hero.Id].deckCardIds);
     }
 
-    void RefreshDeck(List<CardData> deck)
+    void RefreshDeck(List<string> deck)
     {
         foreach (Transform child in deckParent)
             Destroy(child.gameObject);
 
-        foreach (CardData card in deck)
+        foreach (string card in deck)
         {
             CardEntryView icon = Instantiate(cardEntryPrefab, deckParent);
-            icon.Setup(card);
+            
+            icon.Setup(cardDatabase.Get(card));
         }
     }
 

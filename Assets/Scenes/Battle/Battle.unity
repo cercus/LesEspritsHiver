@@ -1900,6 +1900,7 @@ MonoBehaviour:
   cardViewHover: {fileID: 1133080263}
   heroDatabase: {fileID: 11400000, guid: 04d8234c725477a4296784411a0f9328, type: 2}
   heroView: {fileID: 5502979816591187456}
+  cardDatabase: {fileID: 11400000, guid: ac835c688e1d2bf45a7bd2994de97646, type: 2}
 --- !u!1 &2073095254
 GameObject:
   m_ObjectHideFlags: 0
@@ -2176,6 +2177,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5381615557620544450, guid: 70d1ab54b5114d24b954fc090b5b2c30, type: 3}
+      propertyPath: playerDatabase
+      value: 
+      objectReference: {fileID: 11400000, guid: 04d8234c725477a4296784411a0f9328, type: 2}
     - target: {fileID: 6096642436843093077, guid: 70d1ab54b5114d24b954fc090b5b2c30, type: 3}
       propertyPath: m_Name
       value: HeroView

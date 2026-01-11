@@ -11,6 +11,8 @@ public class CardSystem : Singleton<CardSystem>
     private List<Card> drawPile;
     private List<Card> discardPile;
     private List<Card> hand;
+    private CardDatabase cardDatabase;
+
 
     protected override void Awake()
     {
@@ -19,7 +21,7 @@ public class CardSystem : Singleton<CardSystem>
     }
 
     // 🔗 Binding de la scène
-    public void BindScene(HandView handView, Transform drawPilePoint, Transform discardPilePoint)
+    public void BindScene(HandView handView, Transform drawPilePoint, Transform discardPilePoint, CardDatabase cardDatabase)
     {
         this.handView = handView;
         this.drawPilePoint = drawPilePoint;
@@ -48,13 +50,19 @@ public class CardSystem : Singleton<CardSystem>
         ActionSystem.UnsubscribeReaction<EnemyTurnGA>(EnemyTurnPostReaction, ReactionTiming.POST);
     }
 
-    public void Setup(List<CardData> deckData)
+    public void Setup(PlayerProfile playerProfile)
     {
+        drawPile.Clear();
 
-        foreach(CardData cardData in deckData)
+        foreach(string cardId in playerProfile.CurrentHero.deckCardIds)
         {
-            Card card = new(cardData);
-            drawPile.Add(card);
+            CardData cardData = cardDatabase.Get(cardId);
+            if(cardData != null)
+            {
+                Card card = new(cardData);
+                drawPile.Add(card);
+            }
+            
         }
     }
 

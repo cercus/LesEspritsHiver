@@ -16,6 +16,7 @@ MonoBehaviour:
   <Description>k__BackingField: Pioche 1 carte
   <mana>k__BackingField: 0
   <Image>k__BackingField: {fileID: 21300000, guid: 73fcb3f00d552e341975fc34ef0ed605, type: 3}
+  <Id>k__BackingField: 5d6_drawCard
   <ManualTargetEffect>k__BackingField:
     rid: -2
   <OtherEffects>k__BackingField:

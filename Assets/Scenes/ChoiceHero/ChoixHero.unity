@@ -706,6 +706,7 @@ MonoBehaviour:
   heroDescription: {fileID: 788502212}
   deckGrid: {fileID: 1809778487}
   cardPrefab: {fileID: 2780383593423005230, guid: 325e1c1aa25ec13449b99cd214a34685, type: 3}
+  cardDatabase: {fileID: 11400000, guid: ac835c688e1d2bf45a7bd2994de97646, type: 2}
 --- !u!1 &634381399
 GameObject:
   m_ObjectHideFlags: 0
@@ -1706,6 +1707,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CharacterSelectUI
   heroDatabase: {fileID: 11400000, guid: 04d8234c725477a4296784411a0f9328, type: 2}
+  cardDatabase: {fileID: 11400000, guid: ac835c688e1d2bf45a7bd2994de97646, type: 2}
   tabsParent: {fileID: 27007690}
   tabPrefab: {fileID: 7506345203385183278, guid: ff0f7653f7238fa4baecaa1f73e8b415, type: 3}
   heroPortrait: {fileID: 1027792555}
@@ -1883,7 +1885,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.0009453704}
+  m_AnchoredPosition: {x: 0, y: 0.00015709145}
   m_SizeDelta: {x: 0, y: 300}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &1324877006
@@ -2275,6 +2277,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ConfirmButtonUI
   characterSelectUI: {fileID: 1123707138}
+  playerDatabase: {fileID: 0}
 --- !u!1 &1735746380
 GameObject:
   m_ObjectHideFlags: 0

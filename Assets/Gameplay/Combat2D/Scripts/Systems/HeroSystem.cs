@@ -5,29 +5,34 @@ public class HeroSystem : Singleton<HeroSystem>
     public HeroView HeroView { get; private set; }
 
     public HeroState State { get; private set; }
+
+    public HeroData HeroData { get; private set; }
+    public PlayerDatabase PlayerDatabase { get; private set;}
     
-    public void BindScene(HeroView heroView)
+    public void BindScene(HeroView heroView, PlayerDatabase playerDatabase)
     {
         HeroView = heroView;
+        PlayerDatabase = playerDatabase;
     }
 
     public void UnbindScene()
     {
         HeroView = null;
     }
-    
-    public void Setup(HeroData heroData)
+
+    public void Setup(PlayerProfile profile)
     {
-        if (HeroView == null)
+        HeroData = PlayerDatabase.Get(profile.CurrentHero.id);
+
+        State = new HeroState
         {
-            Debug.LogError("HeroSystem not bound to scene");
-            return;
-        }
-        
-        State = SaveSystem.Instance.Data.hero;
-        State.currentHealth = State.maxHealth;
-        
-        HeroView.Setup(State.maxHealth, heroData.Image, heroData.name);
+            level = profile.CurrentHero.level,
+            experience = profile.CurrentHero.experience,
+            maxHealth = XPTable.CalculateHealth(profile.CurrentHero.maxHealth),
+            currentHealth = XPTable.CalculateHealth(profile.CurrentHero.currentHealth),
+            name = profile.CurrentHeroData.Name
+        };
+        HeroView.Setup(State.maxHealth, profile.CurrentHeroData.Image, profile.CurrentHeroData.name);
     }
 
     public void GainXP(int amount)

@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+
 [System.Serializable]
 public class HeroState
 {
@@ -7,4 +9,5 @@ public class HeroState
     public int maxHealth;
     public int currentHealth;
     public string name;
+    public List<string>  deckCardIds = new();
 }

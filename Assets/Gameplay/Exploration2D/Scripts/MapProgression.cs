@@ -8,9 +8,8 @@ public class MapProgression : Singleton<MapProgression>
 
     private MapSaveData Save => SaveSystem.Instance.Data.mapProgression;
 
-    protected void Awake()
+    protected void Start()
     {
-        base.Awake();
         LoadFromSave();
     }
 

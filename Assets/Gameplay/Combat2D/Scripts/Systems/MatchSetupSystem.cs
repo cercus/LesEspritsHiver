@@ -25,6 +25,8 @@ public class MatchSetupSystem : MonoBehaviour
     [SerializeField] private PlayerDatabase heroDatabase;
     [SerializeField] private HeroView heroView;
 
+    [SerializeField] private CardDatabase cardDatabase;
+
     
 
     void Start()
@@ -34,9 +36,9 @@ public class MatchSetupSystem : MonoBehaviour
         DamageSystem.Instance.BindScene(damageVFX);
         ManualTargetSystem.Instance.BindScene(targetLayerMask);
         EnemySystem.Instance.BindScene(enemyBoardView);
-        CardSystem.Instance.BindScene(handView, drawPilePoint, discardPilePoint);
+        CardSystem.Instance.BindScene(handView, drawPilePoint, discardPilePoint, cardDatabase);
         CardViewHoverSystem.Instance.BindScene(cardViewHover);
-        HeroSystem.Instance.BindScene(heroView);
+        HeroSystem.Instance.BindScene(heroView, heroDatabase);
         
 
         SetupHero();
@@ -76,9 +78,10 @@ public class MatchSetupSystem : MonoBehaviour
 
     private void SetupHero()
     {
-        HeroData heroData = heroDatabase.Get(SaveSystem.Instance.Data.hero.id);
-        HeroSystem.Instance.Setup(heroData);
-        CardSystem.Instance.Setup(heroData.Deck);
+        HeroState hero = PlayerProfile.Instance.CurrentHero;
+        HeroData heroData = PlayerProfile.Instance.CurrentHeroData;
+        HeroSystem.Instance.Setup(PlayerProfile.Instance);
+        CardSystem.Instance.Setup(PlayerProfile.Instance);
     }
 
 }
