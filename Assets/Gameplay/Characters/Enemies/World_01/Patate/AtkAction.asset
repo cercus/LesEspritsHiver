@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aaf66f5c8f8cf734cb06fe6772852156, type: 3}
   m_Name: AtkAction
   m_EditorClassIdentifier: Assembly-CSharp::EnemyAttackAction
-  damage: 1
+  damage: 20

@@ -1885,7 +1885,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.00015709145}
+  m_AnchoredPosition: {x: 0, y: -0.0000015801924}
   m_SizeDelta: {x: 0, y: 300}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &1324877006
@@ -2277,7 +2277,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ConfirmButtonUI
   characterSelectUI: {fileID: 1123707138}
-  playerDatabase: {fileID: 0}
+  playerDatabase: {fileID: 11400000, guid: 04d8234c725477a4296784411a0f9328, type: 2}
 --- !u!1 &1735746380
 GameObject:
   m_ObjectHideFlags: 0
@@ -2630,7 +2630,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1695827713}
   m_Direction: 2
   m_Value: 0
-  m_Size: 1
+  m_Size: 0.99999744
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:

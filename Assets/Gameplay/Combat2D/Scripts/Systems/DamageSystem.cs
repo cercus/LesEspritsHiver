@@ -4,6 +4,7 @@ using UnityEngine;
 public class DamageSystem : Singleton<DamageSystem>
 {
     private GameObject damageVFX;
+    private GameObject killVFX;
     //private bool isBound;
 
     protected override void Awake()
@@ -13,9 +14,10 @@ public class DamageSystem : Singleton<DamageSystem>
     }
 
     // 🔗 Binding de la scène
-    public void BindScene(GameObject damageVFX)
+    public void BindScene(GameObject damageVFX, GameObject killVFX)
     {
         this.damageVFX = damageVFX;
+        this.killVFX = killVFX;
         //isBound = true;
 
         
@@ -43,15 +45,22 @@ public class DamageSystem : Singleton<DamageSystem>
     {
         foreach (CombatantView target in dealDamageGA.Targets)
         {
-           
+            if(target == null)
+                yield break;
+            Debug.Log("Damage="+ dealDamageGA.Amount);
             target.Damage(dealDamageGA.Amount);
-            Instantiate(damageVFX, target.transform.position, Quaternion.identity);
+            if(damageVFX != null && target != null)
+                Instantiate(damageVFX, target.transform.position, Quaternion.identity);
             yield return new WaitForSeconds(0.15f);
             
             // Cas où le heros n'a plus de vie
-            if(target is HeroView heroView && target.CurrentHealth <= 0)
+            if(target is HeroView heroView && heroView.CurrentHealth <= 0)
             {
+                if(damageVFX != null && heroView != null)
+                    Instantiate(killVFX, heroView.transform.position, Quaternion.identity);
+                yield return new WaitForSeconds(0.5f);
                 BattleManager.Instance.EndBattle(false);
+                yield break;
             }
             
             if(target.CurrentHealth <= 0)

@@ -8,8 +8,6 @@ public class CardDatabase : ScriptableObject
 
     public CardData Get(string id)
     {
-        Debug.Log("id="+id);
-        Debug.Log("list="+allCards);
         return allCards.Find(h => h.Id == id);
     }
     

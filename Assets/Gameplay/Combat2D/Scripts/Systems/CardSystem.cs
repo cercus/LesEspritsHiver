@@ -11,7 +11,7 @@ public class CardSystem : Singleton<CardSystem>
     private List<Card> drawPile;
     private List<Card> discardPile;
     private List<Card> hand;
-    private CardDatabase cardDatabase;
+    private CardDatabase CardDatabase;
 
 
     protected override void Awake()
@@ -29,7 +29,15 @@ public class CardSystem : Singleton<CardSystem>
         drawPile = new();
         discardPile = new();
         hand = new();
+        CardDatabase = cardDatabase;
 
+    }
+
+    public void UnbindScene()
+    {
+        handView = null;
+        drawPilePoint = null;
+        discardPilePoint = null;
     }
 
     void OnEnable()
@@ -56,7 +64,7 @@ public class CardSystem : Singleton<CardSystem>
 
         foreach(string cardId in playerProfile.CurrentHero.deckCardIds)
         {
-            CardData cardData = cardDatabase.Get(cardId);
+            CardData cardData = CardDatabase.Get(cardId);
             if(cardData != null)
             {
                 Card card = new(cardData);
@@ -87,6 +95,8 @@ public class CardSystem : Singleton<CardSystem>
 
     private IEnumerator DrawCard()
     {
+        if (drawPilePoint == null || handView == null)
+            yield break;
         Card card = drawPile.Draw();
         hand.Add(card);
         CardView cardView = CardViewCreator.Instance.CreateCardView(card, drawPilePoint.position, drawPilePoint.rotation);
@@ -101,6 +111,9 @@ public class CardSystem : Singleton<CardSystem>
 
     private IEnumerator DiscardAllCardsPerformer(DiscardAllCardsGA discradAllCardsGA)
     {
+        if (handView == null)
+            yield break;
+
         foreach(Card card in hand)
         {
             //discardPile.Add(card);
@@ -112,6 +125,8 @@ public class CardSystem : Singleton<CardSystem>
 
     private IEnumerator PlayCardPerformer(PlayCardGA playCardGA)
     {
+        if(handView == null)
+            yield break;
         hand.Remove(playCardGA.Card);
         CardView cardView = handView.RemoveCard(playCardGA.Card);
         yield return DiscardCard(cardView);
@@ -150,6 +165,8 @@ public class CardSystem : Singleton<CardSystem>
 
     private IEnumerator DiscardCard(CardView cardView)
     {
+        if(cardView == null || discardPilePoint == null)
+            yield break;
         discardPile.Add(cardView.Card);
         cardView.transform.DOScale(Vector3.zero, 0.15f);
         Tween tween = cardView.transform.DOMove(discardPilePoint.position, 0.15f);

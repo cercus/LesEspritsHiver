@@ -4,4 +4,5 @@ public static class BattleContext
 {
     public static List<EnemyData> Enemies;
     public static MapNode CurrentNode;
+    public static bool? Victory = null;
 }

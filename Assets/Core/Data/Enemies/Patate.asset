@@ -16,7 +16,7 @@ MonoBehaviour:
   <Name>k__BackingField: La Patate
   <Image>k__BackingField: {fileID: 21300000, guid: a4cfcce63dcbd6145b653cc158e36633, type: 3}
   <Health>k__BackingField: 10
-  <AttackPower>k__BackingField: 1
+  <AttackPower>k__BackingField: 20
   <DefensePower>k__BackingField: 0
   <Experience>k__BackingField: 12
   <Niveau>k__BackingField: 1

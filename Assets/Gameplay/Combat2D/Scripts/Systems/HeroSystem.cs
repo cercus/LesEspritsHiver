@@ -28,10 +28,11 @@ public class HeroSystem : Singleton<HeroSystem>
         {
             level = profile.CurrentHero.level,
             experience = profile.CurrentHero.experience,
-            maxHealth = XPTable.CalculateHealth(profile.CurrentHero.maxHealth),
-            currentHealth = XPTable.CalculateHealth(profile.CurrentHero.currentHealth),
+            maxHealth = XPTable.CalculateHealth(profile.CurrentHero.level),
+            currentHealth = XPTable.CalculateHealth(profile.CurrentHero.level),
             name = profile.CurrentHeroData.Name
         };
+        Debug.Log("health="+State.maxHealth);
         HeroView.Setup(State.maxHealth, profile.CurrentHeroData.Image, profile.CurrentHeroData.name);
     }
 

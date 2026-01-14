@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MatchSetupSystem : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class MatchSetupSystem : MonoBehaviour
     [SerializeField] private ManaUI manaUI;
 
     [SerializeField] private GameObject damageVFX;
+    [SerializeField] private GameObject killVFX;
 
     [SerializeField] private LayerMask targetLayerMask;
 
@@ -27,13 +29,18 @@ public class MatchSetupSystem : MonoBehaviour
 
     [SerializeField] private CardDatabase cardDatabase;
 
+    [SerializeField] private Button button;
+
+    [SerializeField] private GameOverUI gameOverUI;
+
     
 
     void Start()
     {
+        BattleContext.Victory = null;
         MouseUtil.BindCamera(battleCamera);
         ManaSystem.Instance.BindScene(manaUI);
-        DamageSystem.Instance.BindScene(damageVFX);
+        DamageSystem.Instance.BindScene(damageVFX, killVFX);
         ManualTargetSystem.Instance.BindScene(targetLayerMask);
         EnemySystem.Instance.BindScene(enemyBoardView);
         CardSystem.Instance.BindScene(handView, drawPilePoint, discardPilePoint, cardDatabase);
@@ -44,6 +51,7 @@ public class MatchSetupSystem : MonoBehaviour
         SetupHero();
         SetupEnemies();
         SetupCardAndMana();
+        gameOverUI.Hide();
         
     }
 
